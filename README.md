@@ -7,7 +7,7 @@ This repository is forked from
 
 To start, you should replace the phrase `YourUsernameHere` with your windows user folder name anywhere it appears in the below instructions. So if your windows user folder is named "Jacob" replace `YourUsernameHere` with `Jacob` e.g. `C:\Users\Jacob\WSL2`  
 
-1. Go to releases and download the latest kernal release, `vmlinux`
+1. Go to [releases](https://github.com/Docker-fixer-upper/custom-wsl2-linux-kernel/releases) and download the latest kernal release, `vmlinux`
 2. Download `.wslconfig` from the main page, or extract it from the source code zip, and edit the file in Notepad as noted below:      
    Replace `YourUsernameHere` at line 3  
    Replace `YourUsernameHere` at line 11
