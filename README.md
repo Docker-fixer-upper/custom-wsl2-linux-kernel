@@ -16,7 +16,7 @@ To start, you should replace the phrase `YourUsernameHere` with your windows use
 7. Restart wsl by running the command `wsl`  
 8. After wsl opens in your terminal, run the command `uname -sr` confirming that the command returns as below
 ```
-Linux 5.15.123.1-lgug2z-custom-WSL2-DockerWiregaurdFix"
+Linux 5.15.123.1-lgug2z-custom-WSL2-DockerWiregaurdFix
 ```  
 7. Restart Docker Desktop  
 8. In Docker Desktop settings, go to Resources > WSL Integration, and check "Enable integration with my default WSL distro" and under "Enable integration with additional distros:" enable "Ubuntu". If it is missing, click "Refresh"  
