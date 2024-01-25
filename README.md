@@ -7,8 +7,8 @@ This repository is forked from
 
 To start, you should replace the phrase `YourUsernameHere` with your windows user folder name anywhere it appears in the below instructions. So if your windows user folder is named "Jacob" replace `YourUsernameHere` with `Jacob` e.g. C:\Users\Jacob\WSL2
 
-1. Go to releases and download the latest kernal release, vmlinux
-2. Download .wslconfig from the main page, or extract it from the source code zip, and edit the file in Notepad as noted below:      
+1. Go to releases and download the latest kernal release, `vmlinux`
+2. Download `.wslconfig` from the main page, or extract it from the source code zip, and edit the file in Notepad as noted below:      
    Replace `YourUsernameHere` at line 3 in `kernel=C:\\Users\\YourUsernameHere\\WSL2\\vmlinux`  
    Replace `YourUsernameHere` at line 11 in `swapFile=C:\\Users\\YourUsernameHere\\AppData\\Local\\Temp\\swap.vhdx`   
 4. Move `vmlinux` to `C:\Users\YourUsernameHere\WSL2\vmlinux` and move `.wslconfig` to `C:\Users\YourUsernameHere\`
