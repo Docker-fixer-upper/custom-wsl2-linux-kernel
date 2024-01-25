@@ -19,6 +19,8 @@ To start, you should replace the phrase `YourUsernameHere` with your windows use
 Linux 5.15.123.1-lgug2z-custom-WSL2-DockerWiregaurdFix
 ```  
 7. Restart Docker Desktop  
-8. In Docker Desktop settings, go to Resources > WSL Integration, and check "Enable integration with my default WSL distro" and under "Enable integration with additional distros:" enable "Ubuntu". If it is missing, click "Refresh"  
-9. Apply and restart  
-10. Rebuild your containers, the CONMARK and Wireguard issues should be gone  
+8. Rebuild your containers, the CONMARK and Wireguard issues should be gone
+
+If the issue remains, your Docker Desktop might be somehow on a custom kernal, so you *may* need to do the below
+9. In Docker Desktop settings, go to Resources > WSL Integration, and check "Enable integration with my default WSL distro" and under "Enable integration with additional distros:" enable whichever distro is there. If there isn't one, ignore steps 9 & 10
+10. Apply and restart Docker Desktop, then retry step 8
