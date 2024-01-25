@@ -1,49 +1,21 @@
 # Custom WSL2 Linux Kernel
 
-This repository is forked from the excellent [Windows WSL2 Kernel Build Script
-repo by
-slyfox1186](https://github.com/slyfox1186/windows-wsl2-kernel-build-script).
+This repository is forked from 
+[ custom-wsl2-linux-kernel](https://github.com/LGUG2Z/custom-wsl2-linux-kernel/tree/linux-msft-wsl-5.15.133.1)
 
-This project aims to use GitHub Actions Workflows to produce and publish
-up-to-date, versioned custom builds of
-[WSL2-Linux-Kernel](https://github.com/microsoft/WSL2-Linux-Kernel) with
-[`HIDDEV`](https://docs.kernel.org/hid/hiddev.html) and
-[`HIDRAW`](https://docs.kernel.org/hid/hidraw.html) enabled.
-
-These custom kernels builds can be used to enable full Yubikey passthrough to
-WSL2 using [`usbipd`](https://github.com/dorssel/usbipd-win), with full FIDO2
-functionality.
-
-The versioning scheme of this project matches the versioning scheme used by
-WSL2-Linux-Kernel.
-
-## Usage
-
-- Download the custom kernel from the releases page
-- Make sure you have saved all your work in all WSL2 instances
-- Shutdown all WSL2 instances with `wsl --shutdown`
-- Edit (or create) the ~/.wslconfig file on Windows
-- Specify the path to the custom kernel
-
-```ini
-# For example...
-[wsl2]
-kernel=C:\\Users\\YOUR_USERNAME\\Downloads\\vmlinux
+# Usage
+1. Go to releases and download the latest kernal release, vmlinux, and store it at C:\Users\YourUsernameHere\WSL2\vmlinux (replacing YourUsernameHere with your user information, e.g. C:\Users\Jacob\WSL2, the final path should be C:  \Users\YourUsernameHere\WSL2\vmlinux)
+2. Download .wslconfig from the main page, or extract it from the source code zip, and edit the file in Notepad as noted below:      
+   Replace `YourUsernameHere` at line 3 in kernel=C:\\Users\\YourUsernameHere\\WSL2\\vmlinux  
+   Replace `YourUsernameHere` at line 11 in swapFile=C:\\Users\\YourUsernameHere\\AppData\\Local\\Temp\\swap.vhdx   
+4. Move vmlinux to C:\Users\YourUsernameHere\WSL2\vmlinux and move .wslconfig to C:\Users\YourUsernameHere\  
+5. Make sure you have saved all your work in all WSL2 instances, then open your terminal/cmd in Windows and run the command: `wsl --shutdown`  
+6. Restart wsl by running the command: `wsl`  
+7. From inside wsl (it will open after running "wsl", it takes a moment), run the command: `uname -sr` confirming that the command returns as below:  
 ```
-
-- Start a WSL2 instance
-- Check that the kernel is running with `uname -sr`
-
-```
-Linux 5.15.123.1-lgug2z-custom-WSL2
-```
-
-## Modification
-
-If you want to build and publish your own custom WSL2 Linux Kernel, you can
-fork this repository and make whatever configuration modifications in
-[config-wsl](config-wsl). The [GitHub Actions
-Workflow](.github/workflows/build.yml) will take care of the rest.
-
-Please take care to update `CONFIG_LOCALVERSION` to distinguish your custom
-kernel from this one.
+Linux 5.15.123.1-lgug2z-custom-WSL2-DockerWiregaurdFix"
+```  
+7. Restart Docker Desktop  
+8. In Docker Desktop settings, go to Resources > WSL Integration, and check "Enable integration with my default WSL distro" and under "Enable integration with additional distros:" enable "Ubuntu". If it is missing, click "Refresh"  
+9. Apply and restart  
+10. Rebuild your containers, the CONMARK and Wireguard issues should be gone  
