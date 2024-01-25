@@ -9,7 +9,7 @@ To start, you should replace the phrase `YourUsernameHere` with your windows use
 
 1. Go to releases and download the latest kernal release, `vmlinux`
 2. Download `.wslconfig` from the main page, or extract it from the source code zip, and edit the file in Notepad as noted below:      
-   Replace `YourUsernameHere` at line 3 
+   Replace `YourUsernameHere` at line 3  
    Replace `YourUsernameHere` at line 11  
 Example:  
 ```
